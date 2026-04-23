@@ -1,0 +1,213 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --font-display: "Press Start 2P", system-ui, sans-serif;
+  --color-pokeball: var(--pokeball);
+  --color-pokeball-dark: var(--pokeball-dark);
+  --color-electric: var(--electric);
+  --color-victory: var(--victory);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.875rem;
+  /* Dark, arcade-style theme by default */
+  --background: oklch(0.18 0.05 265);
+  --foreground: oklch(0.98 0.01 250);
+  --card: oklch(0.24 0.06 265);
+  --card-foreground: oklch(0.98 0.01 250);
+  --popover: oklch(0.22 0.06 265);
+  --popover-foreground: oklch(0.98 0.01 250);
+  --primary: oklch(0.65 0.22 25);
+  --primary-foreground: oklch(0.99 0.01 0);
+  --secondary: oklch(0.32 0.07 265);
+  --secondary-foreground: oklch(0.98 0.01 250);
+  --muted: oklch(0.28 0.05 265);
+  --muted-foreground: oklch(0.75 0.03 260);
+  --accent: oklch(0.78 0.18 90);
+  --accent-foreground: oklch(0.18 0.05 265);
+  --destructive: oklch(0.62 0.24 25);
+  --destructive-foreground: oklch(0.99 0.01 0);
+  --border: oklch(0.35 0.06 265);
+  --input: oklch(0.32 0.07 265);
+  --ring: oklch(0.78 0.18 90);
+  --pokeball: oklch(0.65 0.22 25);
+  --pokeball-dark: oklch(0.45 0.20 25);
+  --electric: oklch(0.85 0.18 95);
+  --victory: oklch(0.78 0.20 145);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image:
+      radial-gradient(circle at 15% 10%, oklch(0.35 0.15 260 / 0.5), transparent 40%),
+      radial-gradient(circle at 85% 85%, oklch(0.45 0.20 25 / 0.35), transparent 45%);
+    background-attachment: fixed;
+  }
+}
+
+/* Pokémon type color tokens */
+:root {
+  --t-normal: #A8A77A;
+  --t-fire: #EE8130;
+  --t-water: #6390F0;
+  --t-electric: #F7D02C;
+  --t-grass: #7AC74C;
+  --t-ice: #96D9D6;
+  --t-fighting: #C22E28;
+  --t-poison: #A33EA1;
+  --t-ground: #E2BF65;
+  --t-flying: #A98FF3;
+  --t-psychic: #F95587;
+  --t-bug: #A6B91A;
+  --t-rock: #B6A136;
+  --t-ghost: #735797;
+  --t-dragon: #6F35FC;
+  --t-dark: #705746;
+  --t-steel: #B7B7CE;
+  --t-fairy: #D685AD;
+}
+
+@layer utilities {
+  .type-normal { background-color: var(--t-normal); color: #fff; }
+  .type-fire { background-color: var(--t-fire); color: #fff; }
+  .type-water { background-color: var(--t-water); color: #fff; }
+  .type-electric { background-color: var(--t-electric); color: #1a1a1a; }
+  .type-grass { background-color: var(--t-grass); color: #fff; }
+  .type-ice { background-color: var(--t-ice); color: #1a1a1a; }
+  .type-fighting { background-color: var(--t-fighting); color: #fff; }
+  .type-poison { background-color: var(--t-poison); color: #fff; }
+  .type-ground { background-color: var(--t-ground); color: #1a1a1a; }
+  .type-flying { background-color: var(--t-flying); color: #fff; }
+  .type-psychic { background-color: var(--t-psychic); color: #fff; }
+  .type-bug { background-color: var(--t-bug); color: #fff; }
+  .type-rock { background-color: var(--t-rock); color: #fff; }
+  .type-ghost { background-color: var(--t-ghost); color: #fff; }
+  .type-dragon { background-color: var(--t-dragon); color: #fff; }
+  .type-dark { background-color: var(--t-dark); color: #fff; }
+  .type-steel { background-color: var(--t-steel); color: #1a1a1a; }
+  .type-fairy { background-color: var(--t-fairy); color: #fff; }
+
+  .glow-card {
+    box-shadow:
+      0 0 0 1px oklch(0.78 0.18 90 / 0.3),
+      0 20px 50px -20px oklch(0.65 0.22 25 / 0.5);
+  }
+
+  .pokeball-bg {
+    background:
+      radial-gradient(circle at 50% 50%, #fff 0 14%, #1a1a1a 14% 18%, transparent 18%),
+      linear-gradient(to bottom, oklch(0.65 0.22 25) 0 50%, #fff 50% 100%);
+  }
+}
